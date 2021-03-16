@@ -13,4 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Rotta homepage
 Route::get('/', 'MainController@index')->name('homepage');
+
+// Rotta pagina prodotti
+Route::get('/prodotti', 'MainController@prodotti')->name('pag-prodotti');
+
+// Rotta pagina contatti
+Route::get('/contatti', 'MainController@contatti')->name('pag-contatti');
