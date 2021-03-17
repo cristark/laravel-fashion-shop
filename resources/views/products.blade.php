@@ -7,7 +7,19 @@
 {{-- MAIN --}}
 @section('content')
     <div class="container">
-        <h1>Benvenuto nella pagina Prodotti</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia id ex, nesciunt temporibus suscipit eius libero voluptates laborum minima, architecto incidunt eligendi tempore assumenda! Non deleniti eaque voluptatem mollitia repellat!</p>
+        @foreach ($abiti as $abito)
+            <div class="dress_box">
+                <img src="{{$abito->poster}}" alt="{{$abito->titolo}}">
+                <div class="spec_box">
+                    <h5>{{$abito->categoria}}</h5>
+                    <p>{{$abito->titolo}}</p>
+                    <p class="price">€ {{$abito->prezzo}}</p>
+                    <div class="option_specs">
+                        <p>Colore: {{$abito->colore}}</p>
+                        <p>Taglia: {{$abito->taglia}}</p>
+                    </div>
+                </div>
+            </div>
+        @endforeach
     </div>
 @endsection
